@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../Fontawesome/fontawesome-free-6.7.2-web/css/all.css">
+    <title>Jspiders</title>
+    <style>
+        *{
+            margin: 0px;
+        }
+        
+        body{
+            background-color: rgb(247, 243, 243);
+        }
+        nav{
+            display: flex;
+            justify-content: space-evenly;
+            box-shadow: 0px 0px 10px black;
+            text-align: start;
+            margin-top: 10px;
+            align-items: center;
+        }
+        h1{
+           font-size: 40px; 
+        }
+        h1::first-letter{
+            color: orange;
+        
+        }
+        .item2>a{
+            text-decoration: none;
+            font-size: 20px;
+            padding: 10px;    
+        }
+        nav a:hover{
+            color: orange;
+        }
+        .spantag{
+            color: orange;
+        }
+        .item2{
+            float: right;
+
+        }
+
+      
+      
+        header{
+            display: flex;
+            font-size: 15px;
+            color: white;
+            align-items: center;
+            gap: 5px;
+        
+        }
+        .dropdown>a{
+            text-decoration: none;
+            color: black;
+            
+            height: 50px;
+            width: 100;
+            border: none;
+
+        }
+        .items1{
+        
+            border: none;
+            background-color: rgb(182, 52, 52);
+            padding: 5px 10px;
+        }
+        .items2{
+            border: none;
+            background-color: rgb(44, 100, 44);
+            padding: 5px 10px;   
+        }
+        .items3{
+            background-color: rgb(12, 68, 90);
+            padding: 5px 10px;   
+        }
+        .items4{
+         
+            background-color: gray;
+            padding: 5px 10px;   
+        }
+        .items5{
+            background-color: green;
+            padding: 5px 10px;   
+        }
+        .items6{
+
+            background-color: brown;
+            padding: 5px 10px;   
+        }
+        .items7{
+            background-color: rgb(42, 192, 104);
+            padding: 5px 10px;   
+        }
+        .items8{
+            background-color: grey;
+            padding: 5px 10px;   
+        }
+        .items9{
+            background-color: rgb(3, 51, 3);
+            padding: 5px 10px;   
+        }
+        .items10{
+            background-color: rgb(116, 115, 23);
+            padding: 5px 10px;   
+        }
+        .items11{
+            background-color: rgb(56, 15, 223);
+            padding: 5px 10px;   
+        }
+        .items12{
+            background-color: rgb(143, 31, 117);
+            padding: 5px 10px;   
+        }
+        .items13{
+            background-color: blueviolet;
+            padding: 5px 10px;   
+        }
+        .items14{
+            background-color: rgb(15, 3, 6);
+            padding: 5px 10px;   
+        }
+    
+        .items1>.dropdown{
+            display: none;
+            color: black;
+        }
+        .items2>.dropdown{
+            display: none;
+            text-decoration: none;
+
+        }
+        .items3>.dropdown{
+            display: none;
+            text-decoration: none;
+
+        }
+        .items4>.dropdown{
+            display: none;
+            text-decoration: none;
+
+        }
+        .items5>.dropdown{
+            display: none;
+            text-decoration: none;
+
+        }
+        .items6>.dropdown{
+            display: none;
+            text-decoration: none;
+
+        }
+        .items7>.dropdown{
+            display: none;
+            text-decoration: none;
+
+        }
+        .items8>.dropdown{
+            display: none;
+            text-decoration: none;
+
+        }
+        .items9>.dropdown{
+            display: none;
+            text-decoration: none;
+
+        }
+        .items10>.dropdown{
+            display: none;
+            text-decoration: none;
+        }
+        .items11>.dropdown{
+            display: none;
+            text-decoration: none;
+        }
+        .items12>.dropdown{
+            display: none;
+            text-decoration: none;
+        }
+        .items13>.dropdown{
+            display: none;
+            text-decoration: none;
+        }
+        .items14>.dropdown{
+            display: none;
+            text-decoration: none;
+        }
+
+
+
+        .items1:hover .dropdown{
+            display: block;
+            background-color: white;
+        }
+        .items2:hover .dropdown{
+            display: block;
+            background-color: white;
+
+        }
+        .items3:hover .dropdown{
+            display: block;
+            background-color: white;
+        }
+        .items4:hover .dropdown{
+            display: block;
+            background-color: white;
+        }
+        .items5:hover .dropdown{
+            display: block;
+            background-color: white;
+        }
+        .items6:hover .dropdown{
+            display: block;
+            background-color: white;
+        }
+        .items7:hover .dropdown{
+            display: block;
+            background-color: white;
+        }
+        .items8:hover .dropdown{
+            display: block;
+            background-color: white;
+        }
+        .items9:hover .dropdown{
+            display: block;
+            background-color: white;
+        }
+        .items10:hover .dropdown{
+            display: block;
+            background-color: white;
+        }
+        .items11:hover .dropdown{
+            display: block;
+            background-color: white;
+        }
+        .items12:hover .dropdown{
+            display: block;
+            background-color: white;
+        }
+        .items13:hover .dropdown{
+            display: block;
+            background-color: white;
+        }
+        .items14:hover .dropdown{
+            display: block;
+            background-color: white;
+        }
+
+
+        .content{
+            display: grid;
+            width: 100%;
+            height: 300px;
+            grid-template-columns: 500px 500px 500px;
+            border: none;
+            gap: 20px;
+    
+        }
+        .organization{
+            background-color: rgb(58, 7, 106);
+            color: white;
+            border-radius: 0px 0px 10px 10px;
+        }
+        .organization>p{
+            margin: 15px;
+        }
+        .statistics{
+            background-color: white;
+            border-radius: 0px 0px 10px 10px;
+        }
+        .statistics>p{
+            background-color: white;
+            border: none;
+            margin: 10px;
+        }
+        .statistics>p>i{
+            color: orange;
+        }
+        .placed{
+            background-color: white;
+            border-radius: 0px 0px 10px 10px;
+            
+
+        }
+        .statistics>p>span{
+            color: orange;
+        }
+        h3{
+            text-align: center;
+            margin: 5px;
+            color: orange;
+        }
+        h4{
+            background-color: grey;
+            padding: 5px 15px;
+            color: black;
+        }
+        button{
+            background-color: grey;
+            padding: 5px 10px;
+            border-radius: 5px;
+            margin: 5px;
+        }     
+        .btn{
+            background-color: orange;
+            color: white;
+        }
+
+    
+        .courses{
+            background-color: white;
+            width: 80%;
+            height: 160px;
+            text-align: center;
+            justify-content: center;
+            margin: auto;
+            margin-top: 20px;
+
+        }
+        .courses>span{
+            display: block;
+            background-color: rgb(90, 118, 112);
+            padding: 10px;
+            color: white;
+            font-size: 20px;
+        }
+        .courses>p{
+            margin: 10px;
+            font-size: 16px;
+        }
+        .courses>button{
+            background-color: rgb(235, 161, 24);
+            height: 40px;
+            margin: 10px;   
+        }
+        .box{
+            color: orange;
+        }
+        .courses>.box1{
+            background-color: grey;
+        }
+        
+
+
+        .cards{
+            display: flex;
+            margin-top: 20px;
+            justify-content: space-evenly;    
+        }    
+        .items{
+            text-align: center;
+            box-shadow: 0px 0px 5px black;
+            border: none;
+            width: 220px;
+            align-items: center;
+            background-color: white;
+        }
+        .items>span{
+            background-color: rgb(90, 82, 82);
+            color: orange;
+            display: block;
+            padding: 10px 0px;
+           
+        }
+        .items>p{
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+
+
+
+        footer{
+            background-color: white;
+            padding: 30px;
+            box-shadow: 0px 0px 20px black;
+            display: flex;
+            justify-content: space-evenly;
+            position: sticky;
+            bottom: 0px;
+            
+
+        
+        }
+        .d{
+            color: orange;
+            font-size: 20px;
+        }
+        .d1{
+
+            color: orange;
+            margin: 10px;
+            font-size: 20px;
+        }
+        .d2{
+        
+            color: rgb(68, 65, 65);
+            margin: 10px;
+            font-size: 20px;
+        }
+        .d3{
+            color: rgb(18, 97, 160);
+            font-size: 20px;
+            margin: 10px;
+        }
+        .d4{
+            color:  rgb(91, 94, 166);
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="item1">
+                <h1>Jspiders</h1> 
+                <span>Training & Development Center</span>  
+        </div>
+        <div class="item2">
+                <a class="spantag"><i class="fa-solid fa-house"></i>Home</a>
+                <a href=""><i class="fa-solid fa-book"></i>Courses</a>
+                <a href=""><i class="fa-solid fa-calendar-days"></i>Batchs</a>
+                <a href=""><i class="fa-solid fa-cubes"></i>Corporates</a>
+                <a href=""><i class="fa-solid fa-map"></i>Contacts</a>
+                <a href=""><i class="fa-solid fa-users"></i>Placements</a>
+                <a class="spantag"><i class="fa-solid fa-pen-to-square"></i>Enquiry</a>
+                <a class="spantag"><i class="fa-solid fa-square-phone"></i>+9154675657</a>
+                <a class="spantag"><i class="fa-solid fa-square-phone"></i>+5637658657</a>
+        </div>
+    </nav>
+
+    <header>
+        <div class="items1">
+                <span>Global<i class="fa-sharp fa-solid fa-caret-down"></i></span>
+                <div class="dropdown">
+                    <a href="">United Kingdom</a><br>
+                    <a href="">United State</a>
+                </div>
+        </div>           
+        
+    
+        <div class="items2">
+            <span>Online<i class="fa-sharp fa-solid fa-caret-down"></i></span>
+            <div class="dropdown">
+                <a href="">Online</a>
+            </div>
+        </div>
+                
+               
+        
+        <div class="items3">
+            <span>Karnataka<i class="fa-sharp fa-solid fa-caret-down"></i></span>
+            <div class="dropdown">
+                <a href=""> Bengaluru - Basavanagudi</a><br>
+                <a href="">Bengaluru - Marathahalli</a><br>
+                <a href="">Mysore</a><br>
+                <a href="">Bengaluru - Rajajinagar</a><br>
+                <a href="">Bengaluru - Hebbal</a><br>
+                <a href="">Bengaluru - BTM Layout  </a> 
+            </div>     
+        </div>
+    
+    
+        <div class="items4">
+           <span>Maharastra<i class="fa-sharp fa-solid fa-caret-down"></i></span>
+           <div class="dropdown">
+                <a href="">Pune - Deccan Gymkhana</a><br>
+                <a href="">Pune - Hadapsar</a><br>
+                <a href="">Pune - Wakad</a><br>
+                <a href="">  Navi - Mumbai</a><br>  
+                <a href="">Mumbai - Thane</a><br>
+                <a href="">Vasai-Virar Mumbai</a>
+            </div>        
+        </div>
+    
+                
+        </div>
+            <div class="items5">
+                <span>Tamil Nadu<i class="fa-sharp fa-solid fa-caret-down"></i></span>
+                <div class="dropdown">
+                    <a href="">Chennai - Chromepet  </a><br>
+                    <a href=""> Chennai - Vadapalani</a><br>
+                    <a href="">Chennai - Velachery</a>
+                </div>
+            </div>
+    
+    
+            <div class="items6">
+                <span>Telangana<i class="fa-sharp fa-solid fa-caret-down"></i></span>
+                <div class="dropdown">
+                <a href="">Hyderabad - JNTU</a><br>
+                <a href=""> Hyderabad - Punjagutta</a><br>   
+                <a href=""> Dilsukhnagar</a>   
+                </div>
+            </div>
+    
+    
+    
+            <div class="items7">
+                <span>Andhra Pradesh<i class="fa-sharp fa-solid fa-caret-down"></i></span>
+                <div class="dropdown">
+                    <a href="">Tirupati</a>
+    
+                </div>
+            </div>
+    
+    
+            <div class="items8">
+                <span>Madhya Pradesh<i class="fa-sharp fa-solid fa-caret-down"></i></span>
+                <div class="dropdown">
+                     
+                </div>
+            </div>
+            <div class="items9">
+                <span>Haryana<i class="fa-sharp fa-solid fa-caret-down"></i></span>
+                <div class="dropdown">
+                    <a href="">Gurugram</a>
+                </div>
+            </div>
+            <div class="items9">
+                <span>Chandigarh<i class="fa-sharp fa-solid fa-caret-down"></i></span>
+                <div class="dropdown">
+                    <a href="">Chandigarh-online</a>
+                </div>
+            </div>
+            <div class="items10">
+                <span>Odisha<i class="fa-sharp fa-solid fa-caret-down"></i></span>
+                <div class="dropdown">
+                    <a href="">Bhubneswar</a>
+                </div>
+            </div>
+            <div class="items11">
+                <span>Kerla<i class="fa-sharp fa-solid fa-caret-down"></i></span>
+                <div class="dropdown">
+                    <a href=""></a>
+                </div>
+            </div>
+            <div class="items12">
+                <span>New Delhi<i class="fa-sharp fa-solid fa-caret-down"></i></span>
+                <div class="dropdown">
+                    <a href="">Delhi</a>
+                    </div>
+            </div>
+            <div class="items13">
+                <span>West bengal<i class="fa-sharp fa-solid fa-caret-down"></i></span>
+                <div class="dropdown">
+                    <a href="">J-kolkata</a>
+                    </div>
+            </div>
+            <div class="items14">
+                <span>Gujurat<i class="fa-sharp fa-solid fa-caret-down"></i></span>
+                <div class="dropdown">
+                    <a href="">Ahemadbad</a>
+                    </div>
+    </header>    
+    
+
+
+<div class="content">
+        <div class="organization"> 
+        <h3><u><i class="fa-solid fa-earth-asia"></i>LARGEST SOFTWARE TRAINING ORGANISATION<i class="fa-solid fa-earth-asia"></i></u></h3>
+        <p>JSpiders is the world's ace software course training organization with an aim to bridge the gap between the demands of the industry and the curriculum of educational institutions.</p>
+        <p>With centers across the Globe, the institute is a platform where young minds are given the opportunity to build successful careers.</p> 
+        <p>"JSpiders is a place where businesses find talent and dreams take flight."</p>
+        </div>
+
+ <div class="content">
+     <div class="statistics">
+     <h3><u> <i class="fa-solid fa-users"></i>PLACEMENT STATISTICS<i class="fa-solid fa-users"></i></u> </h3>
+     <p> <i class="fa-solid fa-arrow-up-short-wide"></i><span>266772</span> Placed Students who have throughout 60% aggregate</p>
+     <p> <i class="fa-solid fa-arrow-up-short-wide"></i> <span>122972</span> Placed Students who have graduated in Non-IT</p>
+     <p> <i class="fa-solid fa-arrow-up-short-wide"></i><span>161728</span> Placed Students who have graduated in IT/CS/IS</p>
+     <p> <i class="fa-solid fa-arrow-up-short-wide"></i><span>28152</span> Placed Students who have less than 60% aggregate in Degree</p>
+     </div>
+ </div>
+
+ <div class="content">
+     <div class="placed"> 
+     <h3><u><i class="fa-solid fa-user-tie"></i>PLACED STUDENTS <i class="fa-solid fa-user-tie"></i></u><h3>
+     <div class="">
+     <div class="years"></div>
+         <h4>Years</h4>
+         <button class="btn">2025</button>
+         <button>2024</button>
+         <button>2023</button>
+         <button>2022</button>
+         <button>2021</button>
+     </div>
+     <div class="degree">
+         <h4>Degree</h4>
+         <button class="btn">BE/BTech</button>
+         <button class="btn">BCA/Bsc</button>
+     </div>
+     <div class="masters">
+         <h4>Master's</h4>
+         <button class="btn">ME/MTech</button>
+         <button class="btn">Msc/MCA</button>
+         <br>
+         <button>Want to hire Our Students?</button>
+     </div> 
+     </div>
+     </div>
+ </div>
+
+   
+
+
+<div class="cards">
+    <div class="items">
+        <span>* No.1 *</span>
+        <p>Training center in the World and also the Largest.</p>
+    </div>
+    <div class="items">
+        <span>*3.1 Lakhs *</span>
+        <p>Students have been Placed,and still counting.</p>
+    </div>
+    <div class="items">
+        <span>* 4870+ *</span>
+        <p>Multinational companies hire from us,and the list is still growing.</p>
+    </div>
+    <div class="items">
+        <span>* 27-32 *</span>
+        <p>Companies conduct interviews every woking day.</p>
+    </div>
+    <div class="items">
+        <span>* 2000-3000 *</span>
+        <p>Students attend interviewsevery day across companies.</p>
+    </div>
+    <div class="items">
+        <span>* 4000-6000*</span>
+        <p>Studentsget placed in a Month across the Globe.</p>
+    </div>
+    </div>
+    
+
+    <div class="courses">
+        <span><b>Courses</b></span>
+        <p>We have the most complete range of software training courses needed by the professional around the world.Please do contact us for any queries related to the courses.</p>
+        <a class="box">Here are some of the popular courses we offer.</a><br>
+        <button class="box1">Java Full Stack</button>
+        <button>Software Testing</button>
+        <button class="box1">MEAN or MERN</button>
+        <button>Python Full Stack</button>
+    </div>
+    
+
+
+<footer>
+    <div class="ab">
+        <a class="d">© 2025JSpiders</a>
+        <a class="d2"><i class="fa-solid fa-user-lock"></i><b>Privacy</b></a>
+    </div>
+    <div class="bc">
+        <a class="d3"><b><i class="fa-solid fa-bug"></i>QSpider</b></a>
+        <a class="d4"><i class="fa-brands fa-python"></i><b>Pyspider</b></a>
+        <a class="d1">+9686800700</a>
+        <a class="d1">+6366110033</a>
+        <a class="d1">UK: +443332423091</a>
+        <a class="d1">enquiry@jspiders.com</a>
+    </div>   
+    </footer>
+</body>
+</html>
