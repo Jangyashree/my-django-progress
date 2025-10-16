@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>Emp TO Dept Joining</h1>
+        <table border="3px">
+            <tr>
+                <th>Ename</th>
+                <th>Empno</th>
+                <th>Job</th>
+                <th>Sal</th>
+                <th>Comm</th>
+                <th>Dname</th>
+                <th>Dloc</th>
+                <th>Deptno</th>
+
+            </tr>
+            {% for EDO  in QLEDO %}
+            <tr>
+                <td>{{EDO.ename}}</td>
+                <td>{{EDO.empno}}</td>
+                <td>{{EDO.job}}</td>
+                <td>{{EDO.sal}}</td>
+                <td>{{EDO.comm}}</td>
+                <td>{{EDO.dept_no.dname}}</td>
+                <td>{{EDO.dept_no.loc}}</td>
+                <td>{{EDO.dept_no.dept_no}}</td>
+            </tr>
+            {% endfor %}
+
+        </table>
+    </center>
+
+</body>
+</html>
