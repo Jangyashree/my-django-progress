@@ -82,7 +82,7 @@ def EmpTODeptjoin(request):
     QLEDO=Emp.objects.select_related('dept_no').filter(job='Manager',dept_no__gte=20)
     QLEDO=Emp.objects.select_related('dept_no').filter(ename='King',dept_no__dept_no=10)
     QLEDO=Emp.objects.select_related('dept_no').filter(Q(comm__isnull=True)|Q(ename__startswith='S'))
-
+    QLEDO=Emp.objects.select_related('dept_no').filter(ename='King',dept_no__dept_no=30)
 
     d={'QLEDO':QLEDO}
     return render(request,'EmpTODeptjoin.html',d)
