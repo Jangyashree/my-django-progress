@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>Conditional statements</h1>
+        <!--
+    if condition
+        {% if a %}
+            <h1>a={{a}} if block</h1>
+        {% endif %}
+        
+
+    if-else condition
+        {% if a > b %}
+            <h1>a={{a}} if block</h1>
+        {% else %}
+            <h1>b={{b}} else block</h1>
+        {% endif %}
+    
+
+    if-elif-else condition
+        {% if a > b %}
+            <h1>a={{a}} if block</h1>
+        {% elif b > c %}
+            <h1>b={{b}} elif block</h1>
+        {% else %}
+            <h1>c={{c}} else block </h1>
+        {% endif %}
+    -->
+
+
+        {% if a > b %}
+            {% if b > c %}
+                <h1>{{a}} if block</h1>
+            {% else %}
+                <h1>{{b}} else block</h1>
+            {% endif %}
+        {% if c > a %}
+            {% if c > b %}
+                <h1></h1>
+            {% else %}
+                <h1></h1>
+            {% endif %}
+        {% endif %}
+    
+    </center>
+</body>
+</html>
