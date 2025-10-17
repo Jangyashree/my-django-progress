@@ -56,7 +56,7 @@ def display_topic(request):
 
 def display_webpage(request):
     QLAO=Webpage.objects.all()
-    #QLAO=Webpage.objects.filter(id__in=(1,4))
+    QLAO=Webpage.objects.filter(id__in=(1,4))
     QLAO=Webpage.objects.filter(id__range=(2,4))
     QLAO=Webpage.objects.filter(id__gte=2)
     QLAO=Webpage.objects.filter(id__gt=2)
@@ -67,7 +67,8 @@ def display_webpage(request):
     QLAO=Webpage.objects.filter(name__contains='R')
     QLAO=Webpage.objects.filter(name__regex='^M\w*')
     QLAO=Webpage.objects.filter(name__isnull=False)
-    
+    QLAO=Webpage.objects.filter(name__isnull=False)
+
     d={'QLAO':QLAO}
     return render(request,'display_webpage.html',d)
 
@@ -84,5 +85,9 @@ def display_access(request):
     return render(request,'display_access.html',d)
 
     
+def topicwebpagejoin(request):
 
+    QLTWO=Webpage.objects.all()
+    d={'QLTWO':QLTWO}
+    return render(request,'topicwebpagejoin.html',d)
 

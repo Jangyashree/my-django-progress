@@ -25,5 +25,6 @@ urlpatterns = [
     path('display_access/',display_access,name='display_access'),
     path('display_topic/',display_topic,name='display_topic'),
     path('display_webpage/',display_webpage,name='display_webpage'),
+    path('topicwebpagejoin/',topicwebpagejoin,name='topicwebpagejoin'),
 
 ]

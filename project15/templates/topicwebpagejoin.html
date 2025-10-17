@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>Topic_Webpage</h1>
+        <table border="3px">
+            <tr>
+                <th>Topic Topic Name</th>
+                <th>TopicName</th>
+                <th>Name</th>
+                <th>Url</th>
+            </tr>
+            {% for WTO in QLTWO %}
+            <tr>
+                <td>{{WTO.topic_name}}</td>
+                <td>{{WTO.topic_name.topic_name}}</td>
+                <td>{{WTO.name}}</td>
+                <td>{{WTO.url}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </center>
+</body>
+</html>
