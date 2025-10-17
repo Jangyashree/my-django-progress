@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>EMP TO MGR JOINING</h1>
+        <table border="3px">
+            <tr>
+                <th>Ename</th>
+                <th>Empno</th>
+                <th>Job</th>
+                <th>Sal</th>
+                <th>Comm</th>
+                <th>MGR</th>
+                <th>EmpDeptno</th>
+
+            </tr>
+            {% for EMO in QLEMO %}
+            <tr>
+                <td>{{EMO.ename}}</td>
+                <td>{{EMO.empno}}</td>
+                <td>{{EMO.job}}</td>
+                <td>{{EMO.sal}}</td>
+                <td>{{EMO.mgr}}</td>
+                <td>{{EMO.comm}}</td>
+                <td>{{EMO.dept_no}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </center>
+</body>
+</html>

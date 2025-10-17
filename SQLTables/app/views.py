@@ -82,9 +82,50 @@ def EmpTODeptjoin(request):
     QLEDO=Emp.objects.select_related('dept_no').filter(job='Manager',dept_no__gte=20)
     QLEDO=Emp.objects.select_related('dept_no').filter(ename='King',dept_no__dept_no=10)
     QLEDO=Emp.objects.select_related('dept_no').filter(Q(comm__isnull=True)|Q(ename__startswith='S'))
+
     d={'QLEDO':QLEDO}
     return render(request,'EmpTODeptjoin.html',d)
 
-#Pre_fetch related
 
+def empmgr(request):
+    QLEMO=Emp.objects.all().select_related('mgr')
+    QLEMO=Emp.objects.all().select_related('mgr').filter(ename__startswith='S')
+    QLEMO=Emp.objects.all().select_related('mgr').filter(ename__startswith='S',mgr__isnull=False)
+    QLEMO=Emp.objects.all().select_related('mgr').filter(mgr__isnull=True,comm__isnull=False)
+    QLEMO=Emp.objects.all().select_related('mgr').filter(job='Analyst',ename='Ford')
+    QLEMO=Emp.objects.all().select_related('mgr').filter(dept_no=10,mgr__isnull=True)
+    QLEMO=Emp.objects.all().select_related('mgr').filter(Q(ename__startswith='S') | Q(mgr__isnull=True))
+    QLEMO=Emp.objects.all().select_related('mgr').filter(ename__endswith='t',mgr__isnull=False)
+    QLEMO=Emp.objects.all().select_related('mgr').filter(ename__contains='r',comm__isnull=False)
+    QLEMO=Emp.objects.all().select_related('mgr').filter(ename__startswith='S',dept_no__lte=30)
+    QLEMO=Emp.objects.all().select_related('mgr').filter(empno=101)
+    QLEMO=Emp.objects.all().select_related('mgr').filter(sal__gt=200,ename__startswith='S')
+    QLEMO=Emp.objects.all().select_related('mgr').filter(sal__lte=800,ename__startswith='S')
+    QLEMO=Emp.objects.all().select_related('mgr').filter(job='Clerk',dept_no=30)
+    QLEMO=Emp.objects.all().select_related('mgr').filter(Q(job='Salesman')|Q(ename='Allen'))
+    
+    d={'QLEMO':QLEMO}
+    return render(request,'empmgr.html',d)
+
+
+def empdeptmgr(request):
+    QLEDMO=Emp.objects.all().select_related('dept_no','mgr')
+    QLEDMO=Emp.objects.all().select_related('dept_no','mgr').filter(dept_no=10)
+    QLEDMO=Emp.objects.all().select_related('dept_no','mgr').filter(dept_no__dname__contains='R')
+    QLEDMO=Emp.objects.all().select_related('dept_no','mgr').filter(mgr__isnull=True,dept_no__dname='Accounting')
+    #QLEDMO=Emp.objects.all().select_related('dept_no','mgr').filter(Q(loc='Dallas')|Q(dept_no__dname='Operation'))
+    QLEDMO=Emp.objects.all().select_related('dept_no','mgr').filter(job = 'Salesman')
+    QLEDMO=Emp.objects.all().select_related('dept_no','mgr').filter(job = 'Manager')
+    QLEDMO=Emp.objects.all().select_related('dept_no','mgr').filter(job = 'Analyst')
+    QLEDMO=Emp.objects.all().select_related('dept_no','mgr').filter(Q(dname__startswith='s')|Q(loc='New York'))
+
+
+    d={'QLEDMO':QLEDMO}
+    return render(request,'empdeptmgr.html',d)
+
+
+
+
+
+#Pre_fetch related
 
