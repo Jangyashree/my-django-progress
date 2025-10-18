@@ -13,19 +13,20 @@
                 <th>Ename</th>
                 <th>Empno</th>
                 <th>Job</th>
+                <th>Hiredate</th>
                 <th>Sal</th>
                 <th>Comm</th>
                 <th>EmpDeptno</th>
                 <th>Dname</th>
                 <th>Dloc</th>
                 <th>Deptno</th>
-
             </tr>
             {% for EDO  in QLEDO %}
             <tr>
                 <td>{{EDO.ename}}</td>
                 <td>{{EDO.empno}}</td>
                 <td>{{EDO.job}}</td>
+                <td>{{EMO.hiredate}}</td>
                 <td>{{EDO.sal}}</td>
                 <td>{{EDO.comm}}</td>
                 <td>{{EDO.dept_no}}</td>

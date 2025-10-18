@@ -7,19 +7,22 @@
 </head>
 <body>
     <center>
-        <h1>EMPDEPT TO MGR JOINING</h1>
+        <h1>EMP TO DEPT TO MGR JOINING</h1>
         <table border="3px">
             <tr>
                 <th>Ename</th>
                 <th>Empno</th>
                 <th>Job</th>
+                <th>Hiredate</th>
                 <th>Sal</th>
                 <th>Comm</th>
-                <th>MGR</th>
                 <th>EmpDeptno</th>
                 <th>Dname</th>
                 <th>Dloc</th>
-                <th>Deptno</th>
+                <th>DeptDeptno</th>
+                <th>MGREname</th>
+                <th>MGREmpno</th>
+                <th>MGRJob</th>
 
             </tr>
             {% for EDMO in QLEDMO %}
@@ -27,13 +30,17 @@
                 <td>{{EDMO.ename}}</td>
                 <td>{{EDMO.empno}}</td>
                 <td>{{EDMO.job}}</td>
+                <td>{{EDMO.hiredate}}</td>
                 <td>{{EDMO.sal}}</td>
-                <td>{{EDMO.mgr}}</td>
                 <td>{{EDMO.comm}}</td>
                 <td>{{EDMO.dept_no}}</td>
                 <td>{{EDMO.dept_no.dname}}</td>
                 <td>{{EDMO.dept_no.loc}}</td>
                 <td>{{EDMO.dept_no.dept_no}}</td>
+                <td>{{EDMO.mgr.ename}}</td>
+                <td>{{EDMO.mgr.empno}}</td>
+                <td>{{EDMO.mgr.job}}</td>
+
             </tr>
             {% endfor %}
         </table>
