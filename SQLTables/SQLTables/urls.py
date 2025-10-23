@@ -27,5 +27,6 @@ urlpatterns = [
     path('EmpTODeptjoin/',EmpTODeptjoin,name='EmpTODeptjoin'),
     path('empmgr/',empmgr,name='empmgr'),
     path('empdeptmgr/',empdeptmgr,name='empdeptmgr'),
+    path('DeptToEmpPFR/',DeptToEmpPFR,name='DeptToEmpPFR'),
     
 ]

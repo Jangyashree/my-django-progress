@@ -3,6 +3,7 @@ from app.models import *
 # Create your views here.
 from django.http import HttpResponse
 from django.db.models import Q
+from django.db.models import Prefetch
 
 def insert_dept(request):
     dno=int(input('enter Dept_no'))
@@ -133,7 +134,12 @@ def empdeptmgr(request):
 
 
 
-
-
 #Pre_fetch related
+def DeptToEmpPFR(request):
+    QLDEO=Dept.objects.all().prefetch_related('emp_set')
+    #QLDEO=Dept.objects.prefetch_related(Prefetch('emp_set', queryset=Emp.objects.filter(ename='Smith'))).filter(dname='Research')
+    QLDEO=Dept.objects.prefetch_related('emp_set').filter(dname='Research')
+
+    d={'QLDEO':QLDEO}
+    return render(request, 'DeptToEmpPFR.html',d)
 

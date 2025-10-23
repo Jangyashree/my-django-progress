@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>DeptTOEmp Prefetch_related</h1>
+        {% for DEO in QLDEO %}
+            <h1>{{DEO.dname}}</h1>
+
+        <table border="3px">
+            <tr>
+                <th>Ename</th>
+                <th>Empno</th>
+                <th>Job</th>
+                <th>Sal</th>
+            </tr>
+
+            {% for EO in DEO.emp_set.all %}
+            <tr>
+                <td>{{EO.ename}}</td>
+                <td>{{EO.empno}}</td>
+                <td>{{EO.job}}</td>
+                <td>{{EO.sal}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <hr>
+        {% endfor %}
+    </center>
+    
+</body>
+</html>
