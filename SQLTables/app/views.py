@@ -137,8 +137,11 @@ def empdeptmgr(request):
 #Pre_fetch related
 def DeptToEmpPFR(request):
     QLDEO=Dept.objects.all().prefetch_related('emp_set')
-    #QLDEO=Dept.objects.prefetch_related(Prefetch('emp_set', queryset=Emp.objects.filter(ename='Smith'))).filter(dname='Research')
     QLDEO=Dept.objects.prefetch_related('emp_set').filter(dname='Research')
+    QLDEO=Dept.objects.prefetch_related(Prefetch('emp_set', queryset=Emp.objects.filter(ename='Smith'))).filter(dname='Research')
+    QLDEO=Dept.objects.filter(dname='Research').prefetch_related(Prefetch('emp_set', queryset=Emp.objects.filter(ename='Smith')))
+    QLDEO=Dept.objects.prefetch_related(Prefetch('emp_set', queryset=Emp.objects.filter(ename='Smith')))
+    QLDEO=Dept.objects.prefetch_related(Prefetch('emp_set', queryset=Emp.objects.filter(ename='Smith') | Emp.objects.filter(dept_no__dname='Accounting')))
 
     d={'QLDEO':QLDEO}
     return render(request, 'DeptToEmpPFR.html',d)

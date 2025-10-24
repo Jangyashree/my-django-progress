@@ -9,8 +9,9 @@
     <center>
         <h1>DeptTOEmp Prefetch_related</h1>
         {% for DEO in QLDEO %}
+        {% if DEO.emp_set.all %}
             <h1>{{DEO.dname}}</h1>
-
+        
         <table border="3px">
             <tr>
                 <th>Ename</th>
@@ -28,6 +29,7 @@
             </tr>
             {% endfor %}
         </table>
+        {% endif %}
         <hr>
         {% endfor %}
     </center>
