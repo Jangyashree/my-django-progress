@@ -2,8 +2,8 @@ from django.shortcuts import render
 from app.models import *
 # Create your views here.
 from django.http import HttpResponse
-from django.db.models import Q
-from django.db.models import Prefetch
+from django.db.models import Prefetch,Q,Avg,Max,Min,Sum,Count
+from django.db.models.functions import Length
 
 def insert_dept(request):
     dno=int(input('enter Dept_no'))
@@ -83,6 +83,31 @@ def EmpTODeptjoin(request):
     QLEDO=Emp.objects.select_related('dept_no').filter(job='Manager',dept_no__gte=20)
     QLEDO=Emp.objects.select_related('dept_no').filter(ename='King',dept_no__dept_no=10)
     QLEDO=Emp.objects.select_related('dept_no').filter(Q(comm__isnull=True)|Q(ename__startswith='S'))
+    QLEDO=Emp.objects.all()
+
+    #aggregate & annotate
+
+    #print(Emp.objects.values())
+    # print(Emp.objects.values('ename','sal'))
+    # print(Emp.objects.values_list('ename','sal'))
+    # print(Emp.objects.values_list('ename','sal').filter(sal__gt=1000))
+    # print(Emp.objects.aggregate(Avg('sal'),Max('sal')))
+    # print(Emp.objects.aggregate(avgs=Avg('sal')))
+    # print(Emp.objects.aggregate(avgs=Avg('sal'))['avgs'])
+    # print(Emp.objects.values('dept_no').annotate(Avg('sal')))
+    # print(Emp.objects.filter(dept_no=10).aggregate(avgs=Avg('sal')))
+    # print(Emp.objects.filter(dept_no=10).aggregate(avgs=Avg('sal'))['avgs'])
+
+    #WAQTD the employes details where there salary is more than avg sal of dept 20
+    avgs=Emp.objects.filter(dept_no=20).aggregate(avgs=Avg('sal'))['avgs']
+    QLEDO=Emp.objects.filter(sal__gt=avgs).select_related('dept_no')
+
+    
+
+
+
+
+
 
     d={'QLEDO':QLEDO}
     return render(request,'EmpTODeptjoin.html',d)
