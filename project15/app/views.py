@@ -3,6 +3,8 @@ from app.models import *
 # Create your views here.
 from django.http import HttpResponse
 
+from project15 import urls
+
 def insert_topic(request):
     tn=input('enter topic name')
     TTO=Topic.objects.get_or_create(topic_name=tn)
@@ -55,21 +57,23 @@ def display_topic(request):
 
 
 def display_webpage(request):
-    QLAO=Webpage.objects.all()
-    QLAO=Webpage.objects.filter(id__in=(1,4))
-    QLAO=Webpage.objects.filter(id__range=(2,4))
-    QLAO=Webpage.objects.filter(id__gte=2)
-    QLAO=Webpage.objects.filter(id__gt=2)
-    QLAO=Webpage.objects.filter(id__lt=2)
-    QLAO=Webpage.objects.filter(id__lte=2)
-    QLAO=Webpage.objects.filter(name__startswith='R')
-    QLAO=Webpage.objects.filter(name__endswith='k')
-    QLAO=Webpage.objects.filter(name__contains='R')
-    QLAO=Webpage.objects.filter(name__regex='^M\w*')
-    QLAO=Webpage.objects.filter(name__isnull=False)
-    QLAO=Webpage.objects.filter(name__isnull=False)
+    
+    QLWO=Webpage.objects.filter(id__in=(1,4))
+    QLWO=Webpage.objects.filter(id__range=(2,4))
+    QLWO=Webpage.objects.filter(id__gte=2)
+    QLWO=Webpage.objects.filter(id__gt=2)
+    QLWO=Webpage.objects.filter(id__lt=2)
+    QLWO=Webpage.objects.filter(id__lte=2)
+    QLWO=Webpage.objects.filter(name__startswith='R')
+    QLWO=Webpage.objects.filter(name__endswith='k')
+    QLWO=Webpage.objects.filter(name__contains='R')
+    QLWO=Webpage.objects.filter(name__regex='^M\w*')
+    QLWO=Webpage.objects.filter(name__isnull=False)
+    QLWO=Webpage.objects.filter(name__isnull=False)
 
-    d={'QLAO':QLAO}
+    QLWO=Webpage.objects.all()
+
+    d={'QLWO':QLWO}
     return render(request,'display_webpage.html',d)
 
 
@@ -91,3 +95,24 @@ def topicwebpagejoin(request):
     d={'QLTWO':QLTWO}
     return render(request,'topicwebpagejoin.html',d)
 
+
+def update_webpages(request):
+    #Updating Query
+    #Webpage.objects.filter(topic_name='ab').update(url='https://www.AB.com')
+    Webpage.objects.filter(name='remo').update(topic_name='Dancer')
+    #Webpage.objects.filter(name='remo').update(url='https://www.RemoDancer.com')
+
+    #After Updation We are etching all Data
+    QLWO=Webpage.objects.all()
+    d={'QLWO':QLWO}
+    return render(request,'display_webpage.html',d)
+
+def delete_webpage(request):
+    #Deleting a Specific record
+    Webpage.objects.filter(name='abcd').delete()
+
+    #Fetching data
+    QLWO=Webpage.objects.all().delete()
+
+    d={'QLWO':QLWO}
+    return render(request,'display_webpage.html',d)
