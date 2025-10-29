@@ -99,8 +99,18 @@ def topicwebpagejoin(request):
 def update_webpages(request):
     #Updating Query
     #Webpage.objects.filter(topic_name='ab').update(url='https://www.AB.com')
-    Webpage.objects.filter(name='remo').update(topic_name='Dancer')
     #Webpage.objects.filter(name='remo').update(url='https://www.RemoDancer.com')
+    #Webpage.objects.filter(name='Remo').update(topic_name='Dancer')
+    
+
+    #Webpage.objects.update_or_create(name='Ronaldo',defaults={'url':'https://ronaldo.com'})
+    #Webpage.objects.update_or_create(name='Harshad',defaults={'url':'https://python.com'})
+    #Webpage.objects.update_or_create(topic_name='Harshad',defaults={'url':'https://python.com'})
+
+    #CTO=Topic.objects.get(topic_name='Cricket')
+    #Webpage.objects.update_or_create(name='Virat',defaults={'topic_name':CTO})
+
+    #Webpage.objects.update_or_create(name='Rohit',defaults={'topic_name':CTO})
 
     #After Updation We are etching all Data
     QLWO=Webpage.objects.all()
@@ -109,7 +119,7 @@ def update_webpages(request):
 
 def delete_webpage(request):
     #Deleting a Specific record
-    Webpage.objects.filter(name='abcd').delete()
+    Webpage.objects.filter(name='Rohit').delete()
 
     #Fetching data
     QLWO=Webpage.objects.all().delete()
