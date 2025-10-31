@@ -68,7 +68,7 @@ def insert_accessrecord(request):
                 d={'QLAO':QLAO}
                 return render(request,'display_access.html',d)
             else:
-                return render(request,'insert_accessrecord.html')
+                return HttpResponse('Accessrecord is already Present')
         else:
             return render(request,'insert_webpage.html')
     
