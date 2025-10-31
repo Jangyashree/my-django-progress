@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>Insert_Webpage</h1>
+        <form method="POST">
+            {% csrf_token %}
+            <label for="tn">Topic_name : </label>
+            <input type="text" name="tn" id="tn">
+            <br><br>
+            <label for="na">Name : </label>
+            <input type="text" name="na" id="na">
+            <br><br>
+            <label for="ur">URL :</label>
+            <input type="url" name="ur" id="ur">
+            <br><br>
+            <input type="submit" value="Insert_Webpage">
+        </form>
+    </center>
+</body>
+</html>
