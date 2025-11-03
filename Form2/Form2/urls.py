@@ -26,5 +26,7 @@ urlpatterns = [
     path('display_topic/',display_topic,name='display_topic'),
     path('display_webpage/',display_webpage,name='display_webpage'),
     path('display_access/',display_access,name='display_access'),
-
+    path('select__multiple_topic/',select__multiple_topic,name='select__multiple_topic'),
+    path('select_multiple_webpage/',select_multiple_webpage,name='select_multiple_webpage'),
+    path('checkbox/',checkbox,name='checkbox'),
 ]

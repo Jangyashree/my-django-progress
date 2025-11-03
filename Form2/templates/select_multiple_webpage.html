@@ -7,27 +7,18 @@
 </head>
 <body>
     <center>
-        <h1>Insert_AccessRecord</h1>
+        <h1>Select__Multiple_Webpage</h1>
         <form method="POST">
             {% csrf_token %}
             <label for="na">Name:</label>
-            <select name="na" id="na">
+
+            <select name="na" id="na" multiple>
                 {% for WO in QLWO %}
                     <option value="{{WO.id}}">{{WO.name}}</option>
                 {% endfor %}
             </select>
-
             <br><br>
-
-            <label for="auth">Author:</label>
-            <input type="text" name="auth" id="auth">
-            <br><br>
-
-            <label for="date">Date:</label>
-            <input type="datetime" name="date" id="date">
-            <br><br>
-
-            <input type="submit" value="Insert_AccessRecord">
+            <input type="submit" value="Select__Multiple_Webpage">       
         </form>
     </center>
 </body>

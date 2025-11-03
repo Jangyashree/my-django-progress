@@ -10,18 +10,18 @@
         <h1>This is Display of Accessrecord</h1>
         <table border="3px">
             <tr>
-                <th>id</th>
-                <th>name</th>
-                <th>author</th>
-                <th>date</th>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Author</th>
+                <th>Date</th>
             </tr>
             
-    {% for TO in QLAO %}
+    {% for AO in QLAO %}
             <tr>
-                <td>{{TO.id}}</td>
-                <td>{{TO.name}}</td>
-                <td>{{TO.author}}</td>
-                <td>{{TO.date}}</td>
+                <td>{{AO.id}}</td>
+                <td>{{AO.name}}</td>
+                <td>{{AO.author}}</td>
+                <td>{{AO.date}}</td>
             </tr>
     {% endfor %}
         </table>

@@ -7,24 +7,17 @@
 </head>
 <body>
     <center>
-        <h1>Insert_Webpage</h1>
+        <h1>Select__Multiple_Topic</h1>
         <form method="POST">
             {% csrf_token %}
-            <label for="tn">Topic_name: </label>
-            <select name="tn" id="tn">
+            <label for="tn">Topic_name:</label>
+            <select name="tn" id="tn" multiple>
                 {% for TO in QLTO %}
                     <option value="{{TO.topic_name}}">{{TO.topic_name}}</option>
                 {% endfor %}
             </select>
-
             <br><br>
-            <label for="na">Name: </label>
-            <input type="text" name="na" id="na">
-            <br><br>
-            <label for="ur">URL:</label>
-            <input type="url" name="ur" id="ur">
-            <br><br>
-            <input type="submit" value="Insert_Webpage">
+            <input type="submit" value="Select__Multiple_topic">       
         </form>
     </center>
 </body>
