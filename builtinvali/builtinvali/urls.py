@@ -1,5 +1,5 @@
 """
-URL configuration for djforms project.
+URL configuration for builtinvali project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.2/topics/http/urls/
@@ -20,6 +20,5 @@ from app.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('studentdjform/',studentdjform,name='studentdjform'),
     path('insert_student/',insert_student,name='insert_student'),
 ]
