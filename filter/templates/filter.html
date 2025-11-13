@@ -1,0 +1,34 @@
+{% load userDF %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>Filters</h1>
+
+        <h1>{{data}}</h1>
+        <!--<h1>{{data|title}}</h1>
+        <h1>{{data|lower}}</h1>
+        <h1>{{data|upper}}</h1>
+        <h1>{{data|capfirst}}</h1>
+        <h1>{{data|truncatewords:'4'}}</h1>
+        <h1>{{data|truncatechars:'6'}}</h1>
+        <h1>{{data|slice:6}}</h1>
+        <h1>{{data|length}}</h1>
+
+
+        <h1>{{data|capitalize}}</h1>
+
+        <h1>I have {{c}} cat{{c|pluralize}}</h1>
+        <h1>I have {{c}} mango{{c|pluralize:'es'}}</h1>
+        <h1>{{dt}}</h1>
+        <h1>{{dt|date:'D F Y'}}</h1>-->
+        <h1>{{c|pluralize:'This,These'}} {{c}} cat{{c|pluralize}} {{c|pluralize}}</h1>
+        
+    </center>
+</body>
+</html>
