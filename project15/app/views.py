@@ -126,3 +126,6 @@ def delete_webpage(request):
 
     d={'QLWO':QLWO}
     return render(request,'display_webpage.html',d)
+
+def wish(request,name):
+    return HttpResponse(f'Hello {name} How Are You!')

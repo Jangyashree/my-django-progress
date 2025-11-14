@@ -29,4 +29,6 @@ urlpatterns = [
     path('update_webpages/',update_webpages,name='update_webpages'),
     path('delete_webpage/',delete_webpage,name='delete_webpage'),
 
+    path('wish/<name>/',wish,name='wish'),
+
 ]
