@@ -7,7 +7,7 @@ from django.core.mail import send_mail
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse
-
+import random
 
 def registration(request):
     EUMFO=UserMF()
@@ -85,7 +85,7 @@ def display_details(request):
     UO=User.objects.get(username=LUN)
     PO=Profile.objects.get(username=UO)
     d={'UO':UO, 'PO':PO}
-    return render(request,'display_details.html')
+    return render(request,'display_details.html',d)
 
 
 @login_required
@@ -99,3 +99,63 @@ def change_password(request):
         return HttpResponse('Password is Changed')
     
     return render(request,'change_password.html')
+
+
+
+def forgot_password(request):
+    if request.method=='POST':
+        username=request.POST['username']
+
+        UO=User.objects.filter(username=username)
+
+        if UO:
+            request.session['fp']=username
+            return HttpResponseRedirect(reverse('reset_password'))
+        else:
+            return HttpResponse('Invalid Username')
+    return render(request,'forgot_password.html')
+    
+
+
+def reset_password(request):
+    if request.method=='POST':
+        np=request.POST.get('new_password')
+        username=request.session.get('fp')
+
+        user=User.objects.get(username=username)
+        user.set_password(np)
+        user.save
+        return HttpResponse('Password reset successful')
+
+    return render(request, 'reset_password.html')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+def verify_otp(request):
+    email = request.session.get('reset_email')
+    if not email:
+        return HttpResponse("Session expired. Try again.")
+    if request.method == 'POST':
+        entered_otp = request.POST['otp']
+        PO = Profile.objects.get(email=email)
+        if PO.otp == entered_otp:
+            return HttpResponseRedirect(reverse('reset_password'))
+        else:
+            return HttpResponse("Invalid OTP")
+    return render(request, 'verify_otp.html')
+
