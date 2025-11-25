@@ -1,5 +1,5 @@
 """
-URL configuration for PREG16 project.
+URL configuration for SQLTMF2 project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.2/topics/http/urls/
@@ -16,18 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-
 from django.conf import settings
 from django.conf.urls.static import static
 from app.views import *
-
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('registration/',registration,name='registration'),
-    path('Home/',Home,name='Home'),
-    path('user_login/',user_login,name='user_login'),
-    path('user_logout/',user_logout,name='user_logout'),
-    path('display_details/',display_details,name='display_details'),
-    path('change_password/',change_password,name='change_password'),
 
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
