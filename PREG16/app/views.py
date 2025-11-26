@@ -7,17 +7,16 @@ from django.core.mail import send_mail
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse
-import random
 
 def registration(request):
     EUMFO=UserMF()
     EPMFO=ProfileMF()
     d={'EUMFO':EUMFO,'EPMFO':EPMFO}
 
-
     if request.method=='POST' and request.FILES:
         NMUMFDO=UserMF(request.POST)
         NMPMFDO=ProfileMF(request.POST,request.FILES)
+
         if NMUMFDO.is_valid() and NMPMFDO.is_valid():
             MUMFDO=NMUMFDO.save(commit=False)
             pw=NMUMFDO.cleaned_data['password']
@@ -31,7 +30,6 @@ def registration(request):
             MPMFDO.username=MUMFDO
             MPMFDO.save()
 
-
             send_mail('Registration',
                       'Registration is Successfull.',
                       'kjpatra739@gmail.com',
@@ -41,7 +39,6 @@ def registration(request):
             return HttpResponse('Registration is Successfully..')
         else:
             return HttpResponse('Invalid Data')
-
     return render(request,'registration.html',d)
 
 
@@ -128,10 +125,6 @@ def reset_password(request):
         return HttpResponse('Password reset successful')
 
     return render(request, 'reset_password.html')
-
-
-
-
 
 
 
