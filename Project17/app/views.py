@@ -25,13 +25,14 @@ class CBV_template(View):
         
 #validating Form by using FBV
 def FBV_form(request):
-    form=SchoolMF()
+    EFORM=SchoolMF()
     if request.method=='POST':
-        form=SchoolMF(request.POST)
-        if form.is_valid():
+        SFORM=SchoolMF(request.POST)
+        if SFORM.is_valid():
+            SFORM.save
             return HttpResponse('Data inserted')
         
-        return render(request,'FBV_form.html',{'form':form})
+    return render(request,'FBV_form.html',{'EFORM':EFORM})
 
 #validating Form by using CBV
 class CBV_form(View):

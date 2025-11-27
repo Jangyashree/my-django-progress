@@ -7,14 +7,12 @@
 </head>
 <body>
     <center>
-        <h1>FBV_form</h1>
-        <form method="POST">
-            {% csrf_token %}
-            
-            {{EFORM.as_p}}
+        <h1>RenderHtmlByTemplateView</h1>
+        
+        <h1>{{name}}</h1>
 
-            <input type="submit" value="FBV_form">
-        </form>
+        <h1>{{age}}</h1>
+        
     </center>
 </body>
 </html>
