@@ -15,3 +15,33 @@ class CBV(View):
         return HttpResponse('This is CBV')
 
 #FBV returning a html page
+def FBV_template(request):
+    return render(request,'FBV_template.html')
+
+#CBV returning a html page
+class CBV_template(View):
+    def get(self,request):
+        return render(request,'CBV_template.html')
+        
+#validating Form by using FBV
+def FBV_form(request):
+    form=SchoolMF()
+    if request.method=='POST':
+        form=SchoolMF(request.POST)
+        if form.is_valid():
+            return HttpResponse('Data inserted')
+        
+        return render(request,'FBV_form.html',{'form':form})
+
+#validating Form by using CBV
+class CBV_form(View):
+    def get(self, request):
+        form = SchoolMF()
+        return render(request, 'CBV_form.html', {'form': form})
+
+    def post(self, request):
+        form = SchoolMF(request.POST)
+        if form.is_valid():
+            return HttpResponse("Data inserted")
+        return render(request, 'CBV_form.html', {'form': form})
+

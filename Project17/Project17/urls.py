@@ -17,10 +17,19 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from app.views import *
+from django.views.generic import TemplateView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
 
     path('FBV/',FBV,name='FBV'),
     path('CBV/',CBV.as_view(),name='CBV'),
+
+    path('FBV_template/',FBV_template,name='FBV_template'),
+    path('CBV_template/',CBV_template.as_view(),name='CBV_template'),
+
+    path('FBV_form/',FBV_form,name='FBV_form'),
+    path('CBV_form/',CBV_form.as_view(),name='CBV_form'),
+
+    path('Direct/',TemplateView.as_view(template_name='Direct.html'),name='Direct'),
 ]
