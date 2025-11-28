@@ -22,4 +22,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('RenderHtmlByTV/',RenderHtmlByTV.as_view(),name='RenderHtmlByTV'),
     path('InsertByTV/',InsertByTV.as_view(),name='InsertByTV'),
+    path('InsertByFV/',InsertByFV.as_view(),name='InsertByFV'),
 ]

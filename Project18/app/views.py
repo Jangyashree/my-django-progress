@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
 # Create your views here.
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, FormView
 from django.http import HttpResponse
 from app.models import *
 from app.forms import *
@@ -25,3 +25,11 @@ class InsertByTV(TemplateView):
         if SMFDO.is_valid():
             SMFDO.save()
             return HttpResponse('Data Inserted')
+        
+
+class InsertByFV(FormView):
+    template_name='InsertByFV.html'
+    form_class=StudentMF
+    def form_valid(self, form):
+        form.save()
+        return HttpResponse('Data Inserted')
