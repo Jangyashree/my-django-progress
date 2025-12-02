@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>School_Detail</h1>
+
+        <h1>School Name is {{RetrieveSO.scname}}</h1>
+        <h1>School Location is {{RetrieveSO.scloc}}</h1>
+        <h1>School Principal is {{RetrieveSO.scprincipal}}</h1>
+
+        <h1>Students of the School {{RetrieveSO.scname}} is</h1>
+        
+        {% for sto in RetrieveSO.students.all %}
+            <h2>Student Name is {{sto.stname}}</h2>
+            <h2>Student age is {{sto.stage}}</h2>
+        {% endfor %}
+    </center>
+</body>
+</html>
