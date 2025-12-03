@@ -1,11 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+{% extends 'app/dummy.html' %}
+
+{% block title %}
+    <title>Home page</title>
+{% endblock %}
+
+
+{% block body_block %}
     <center>
         <h1>School List Are: </h1>
 
@@ -13,5 +13,6 @@
         <a href="{{so.pk}}"><h2>{{so}}</h2></a>
         {% endfor %}
     </center>
-</body>
-</html>
+{% endblock %}
+
+

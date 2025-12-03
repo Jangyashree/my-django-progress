@@ -2,7 +2,12 @@ from django.shortcuts import render
 
 # Create your views here.
 from app.models import *
-from django.views.generic import ListView,DetailView
+from django.views.generic import ListView, DetailView, CreateView, TemplateView
+
+
+
+class Home(TemplateView):
+    template_name='app/Home.html'
 
 class school_list(ListView):
     model=School
@@ -14,5 +19,9 @@ class school_list(ListView):
 class SchoolDetail(DetailView):
     model=School
     context_object_name='RetrieveSO'
+
+class SchoolCreate(CreateView):
+    model=School
+    fields='__all__'
 
     

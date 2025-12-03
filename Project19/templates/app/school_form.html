@@ -1,0 +1,18 @@
+{% extends 'app/dummy.html' %}
+
+{% block title %}
+    <title>Home page</title>
+{% endblock %}
+
+
+{% block body_block %}
+<center>
+    <h1>School Create Form</h1><br>
+    <form method="POST">
+    {% csrf_token %}
+        {{form.as_p}}
+
+        <input type="submit" value="Create" class="btn btn-success">
+    </form>
+</center>   
+{% endblock %}
