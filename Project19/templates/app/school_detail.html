@@ -20,6 +20,11 @@
             <h2>Student Name is {{sto.stname}}</h2>
             <h2>Student age is {{sto.stage}}</h2>
         {% endfor %}
+
+        <a href="{% url 'SchoolUpdate' pk=RetrieveSO.pk %}">School_Update</a><br>
+
+        <a href="{% url 'SchoolDelete' pk=RetrieveSO.pk %}">School_Delete</a>
+
     </center>
 
 {% endblock %}
