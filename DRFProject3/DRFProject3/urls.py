@@ -20,7 +20,7 @@ from app.views import *
 
 from rest_framework.routers import DefaultRouter
 DRO=DefaultRouter()
-DRO.register('StudentCrudByVS/',StudentCrudByVS,basename='StudentCrudByVS')
+DRO.register('StudentCrudByVS',StudentCrudByVS,basename='StudentCrudByVS')
 
 
 urlpatterns = [
